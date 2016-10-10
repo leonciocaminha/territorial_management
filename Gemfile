@@ -12,6 +12,21 @@ gem 'thin'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'react-rails'
 gem 'rails-i18n', '~> 4.0.0'
+gem "responders", "~> 2.1"
+gem "i18n-js", ">= 3.0.0.rc11"
+gem 'redis', '~> 3.0'
+gem 'figaro'
+gem 'bower-rails'
+gem 'kaminari', git: "git://github.com/amatsuda/kaminari.git", branch: 'master'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem "paloma"
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+gem 'pundit'
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'simple_form'
+gem 'enum_help'
+gem 'pivotal-tracker'
+gem 'seedbank'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -23,6 +38,7 @@ group :development, :test do
   gem "quiet_assets"
   gem "jasmine-rails"
   gem "fuubar"
+  gem 'pry-rails'
 end
 
 group :test do
