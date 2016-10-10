@@ -11,9 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161010225156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                   default: "",   null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar_url"
+    t.boolean  "active",                  default: true
+    t.integer  "ctigi_auth_uid"
+    t.string   "ctigi_auth_access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

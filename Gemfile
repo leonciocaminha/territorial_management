@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 gem 'pg', '~> 0.18'
@@ -12,6 +11,12 @@ gem 'thin'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'react-rails'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'figaro'
+gem 'pundit'
+gem "responders"
+gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
