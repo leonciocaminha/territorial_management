@@ -4,8 +4,17 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root 'main#index'
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", sessions: 'users/sessions' }
+
+    devise_scope :user do
+      get "destroy", :to => "users/sessions#destroy", :as => :destroy_user_session
+    end
+
+    authenticated :user do
+      #Put the your controller and view root for app
+      root to: 'main#index', as: :authenticated_root
+    end
+    root to: redirect('/users/auth/ctigi_auth?provider=ctigi_auth')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
