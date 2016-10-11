@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'pundit'
 gem "responders"
 gem 'pry-rails'
+gem 'gon'
 
 group :development, :test do
   gem 'byebug', platform: :mri

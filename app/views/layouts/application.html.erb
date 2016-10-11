@@ -1,53 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>.::<%= t("general.appname") %>::.</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>.::<%= t("general.appname") %>::.</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render partial: "layouts/sidebar" %>
 
-  <a class="ui image label">
-    <img src="http://semantic-ui.com/images/avatar/small/joe.jpg">
-    Joe
-  </a>
-  <a class="ui image label">
-    <img src="http://semantic-ui.com/images/avatar/small/elliot.jpg">
-    Elliot
-  </a>
-  <a class="ui image label">
-    <img src="http://semantic-ui.com/images/avatar/small/stevie.jpg">
-    Stevie
-  </a>
-
-  <div class="ui modal">
-    <i class="close icon"></i>
-    <div class="header">
-      Profile Picture
-    </div>
-    <div class="image content">
-      <div class="ui medium image">
-        <img src="http://semantic-ui.com/images/avatar/large/chris.jpg">
+    <div class="pusher">
+      <div class="ui top attached demo menu">
+        <a class="item" id="menuTrigger">
+          <i class="sidebar icon"></i>
+          Menu
+        </a>
       </div>
-      <div class="description">
-        <div class="ui header">We've auto-chosen a profile image for you.</div>
-        <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-        <p>Is it okay to use this photo?</p>
+      <div class="container">
+        <%= yield %>
       </div>
     </div>
-    <div class="actions">
-      <div class="ui black deny button">
-        Nope
-      </div>
-      <div class="ui positive right labeled icon button">
-        Yep, that's me
-        <i class="checkmark icon"></i>
-      </div>
-    </div>
-  </div>
-
-<%= yield %>
-
-</body>
+    <%= render partial: "layouts/javascripts" %>
+  </body>
 </html>
